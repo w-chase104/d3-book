@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>D3: Empty page for testing scale functions</title>
-		<script type="text/javascript" src="../d3.js"></script>
+		<script type="text/javascript" src="../project/d3/d3.js"></script>
 		<style type="text/css">
 			/* No style rules here yet */		
 		</style>
@@ -23,7 +23,13 @@
 							[5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
 							[410, 12], [475, 44], [25, 67], [85, 21], [220, 88]
 						  ];
-				
+			var xScale = d3.scaleLinear()
+				.domain([0, d3.max(dataset, function(d){return d[0]})])
+				.range([0,w]);
+			var yScale = d3.scaleLinear()
+				.domain([0, d3.max(dataset, function(d){return d[1];})])
+				.range(0, h);
 		</script>
+
 	</body>
 </html>
